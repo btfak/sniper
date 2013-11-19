@@ -160,27 +160,27 @@ Options:
     可通过命令行 -R 指定配置文件地址，-C 查看当前配置。
 
 ```
-   [protocol]
-   version = HTTP/1.1                            HTTP协议版本，1.1或1.0
-   #connection = keep-alive                      connection模式，# 符号作为注释
-   connection = close
-   accept-encoding = gzip                        
-   user-agent = golang & sniper                  
+[protocol]
+version = HTTP/1.1                            HTTP协议版本，1.1或1.0
+#connection = keep-alive                      connection模式，# 符号作为注释
+connection = close
+accept-encoding = gzip                        
+user-agent = golang & sniper                  
 
-   [header]
-   #cookie = SSID=Abh_TYcDc6YSQh-GB              自定义消息头，等号连接键值对
+[header]
+#cookie = SSID=Abh_TYcDc6YSQh-GB              自定义消息头，等号连接键值对
 
-   [process]
-   timeout = 30                                  socket超时时间 
-   failures = 64                                 最大失败次数，socket错误超过此值则程序退出
+[process]
+timeout = 30                                  socket超时时间 
+failures = 64                                 最大失败次数，socket错误超过此值则程序退出
 
-   [Authenticate]
-   login = jeff:supersecret                      HTTP基本认证
+[Authenticate]
+login = jeff:supersecret                      HTTP基本认证
 
-   [ssl]
-   ssl-cert = /root/cert.pem                     ssl-cert文件地址
-   ssl-key = /root/key.pem                       ssl-key文件地址
-   ssl-timeout = 30                              https超时
+[ssl]
+ssl-cert = /root/cert.pem                     ssl-cert文件地址
+ssl-key = /root/key.pem                       ssl-key文件地址
+ssl-timeout = 30                              https超时
 ```
 
 ##关于
