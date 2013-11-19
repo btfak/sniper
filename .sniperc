@@ -1,0 +1,21 @@
+[protocol]
+version = HTTP/1.1
+#connection = keep-alive 
+connection = close
+accept-encoding = gzip
+user-agent = golang & sniper
+
+[header]
+#cookie = SSID=Abh_TYcDc6YSQh-GB
+
+[process]
+timeout = 30
+failures = 64
+
+[Authenticate]
+login = jeff:supersecret
+
+[ssl]
+ssl-cert = /root/cert.pem
+ssl-key = /root/key.pem
+ssl-timeout = 30
