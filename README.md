@@ -108,7 +108,7 @@ Sniper
 
 ###使用说明
 1. 安装Golang
-2. 安装Sniper
+2. 安装Sniper 
 3. 参数说明
 
 ###关于
