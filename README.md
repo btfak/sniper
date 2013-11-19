@@ -10,8 +10,6 @@ Sniper
 * Mac OSX 32 bit
 * Linux 64 bit
 * Linux 32 bit
-* Windows 64 bit
-* Windows 32 bit
 
 ##功能
 以实用为原则，实现以下功能
@@ -127,6 +125,29 @@ POST
 
     $sniper -c 10 -n 100 -p postData.txt http://www.google.com
     
+####参数
+
+命令行参数
+
+```
+   -c, --concurrent     concurrent users, default is 1.              并发数(默认为1)
+   -n, --requests       number of requests to perform.               总请求数
+   -r, --repetitions    number of times to run the test.             重复次数(n=c*r)
+   -t, --time           testing time, 30 mean 30 seconds.            测试时间(单位秒)
+   -R, --sniperc        specify an sniperc file to get config        配置文件地址(默认为$HOME/.sniperc)
+                        (default is $HOME/.sniperc).               
+   -f, --urlfile        select a specific URLS file.                 多个测试目标的url文件
+   -p, --post           select a specific file to POST.              POST模式
+   -T, --content-type   set Content-Type in request                  POST的数据类型(默认为text/plain)
+                        (default is text/plain).
+   -V, --Version        print the version number.                    打印sniper版本号
+   -h, --help           print this section.                          输出帮助信息
+   -C, --config         show the current config.                     输出当前配置文件的配置
+   -s, --plot           plot detail transactions' info               是否输出html展示测试结果 
+                        (true | false,default set true,              (默认为true,采用-t指定测试时间时,不会输出html)
+                        notice: set -t will not plot anyhow).
+
+```
 ##关于
 - 友好项目
 - 作者
