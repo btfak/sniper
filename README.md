@@ -211,7 +211,7 @@ Lubia Yang,程序员
 
 联络：yanyuan2046 at 126.com
 
-寻找Golang or C 开发工作中,坐标北京or深圳,大神带我走~
+寻找Golang or C 开发工作中,坐标北京or深圳
 
 ####Licence
 [Apache License, Version 2.0.](http://www.apache.org/licenses/LICENSE-2.0.html)
