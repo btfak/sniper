@@ -200,6 +200,10 @@ ProcessTime:                   0.900 ms(mean)       服务端执行时间+传输
 StateCode:                    1000(code 200)        结果码为200的数量
 ```
 ##关于
-- 友好项目
-- 作者
-- Licence
+####作者
+Lubia Yang,程序员
+博客：[程式設計](www.lubia.me)
+联络：yanyuan2046 at 126.com
+寻找golang || c ∈ 北京 || 深圳 ,y
+####友好项目
+####Licence
