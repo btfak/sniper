@@ -104,7 +104,7 @@ Sniper       [![Build Status](https://drone.io/github.com/lubia/sniper/status.pn
 
 下图展示了总时间和连接建立时间的对比。Golang是怎样得到连接建立的时间呢？
 
-原来是本人基于net库实现了HTTP协议栈，重构而不是官方net/http库才拿到详细的信息，
+原来项目基于net库实现了HTTP协议栈，重构而不是官方net/http库才拿到详细的信息，
 
 提升了性能。
 
