@@ -6,10 +6,12 @@ Sniper       [![Build Status](https://drone.io/github.com/lubia/sniper/status.pn
 
 ##体验
 提供以下可执行文件，可直接运行
-* Mac OSX 64 bit      
-* Mac OSX 32 bit
-* Linux 64 bit
-* Linux 32 bit
+* [Darwin 64 bit](http://lubia-me.qiniudn.com/sniper_darwin_amd64)      
+* [Darwin 32 bit](http://lubia-me.qiniudn.com/sniper_darwin_386)
+* [Linux 64 bit](http://lubia-me.qiniudn.com/sniper_linux_amd64)
+* [Linux 32 bit](http://lubia-me.qiniudn.com/sniper_linux_386)
+* [FreeBSD 64 bit](http://lubia-me.qiniudn.com/sniper_freebsd_amd64)
+* [FreeBSD 32 bit](http://lubia-me.qiniudn.com/sniper_freebsd_386)
 
 ##功能
 以实用为原则，实现以下功能
@@ -112,6 +114,7 @@ Sniper       [![Build Status](https://drone.io/github.com/lubia/sniper/status.pn
 ###2. 安装Sniper
 
     $ go get github.com/lubia/sniper
+    $ go install github.com/lubia/sniper
     $ cp src/github.com/lubia/sniper/.sniperc ~
 
 ###3. 参数说明
