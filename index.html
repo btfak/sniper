@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Sniper by lubia</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Sniper</h1>
+        <p>Golang实现的高性能HTTP负载工具</p>
+
+        <p class="view"><a href="https://github.com/lubia/sniper">View the Project on GitHub <small>lubia/sniper</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/lubia/sniper/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/lubia/sniper/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/lubia/sniper">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="sniper-------" class="anchor" href="#sniper-------"><span class="octicon octicon-link"></span></a>Sniper       <a href="https://drone.io/github.com/lubia/sniper/latest"><img src="https://drone.io/github.com/lubia/sniper/status.png" alt="Build Status"></a>
+</h1>
+
+<blockquote>
+<p>Sniper是一个功能强大、高性能的HTTP负载工具,采用Golang编写。利用协程并发优势，实现海量并发、超低内存占用、丰富图表展示。是测试、分析、优化服务端性能的绝佳助手！</p>
+</blockquote>
+
+<h2>
+<a name="%E4%BD%93%E9%AA%8C" class="anchor" href="#%E4%BD%93%E9%AA%8C"><span class="octicon octicon-link"></span></a>体验</h2>
+
+<p>提供以下可执行文件，可直接运行</p>
+
+<ul>
+<li>
+<a href="http://lubia-me.qiniudn.com/sniper_darwin_amd64">Darwin 64 bit</a><br>
+</li>
+<li><a href="http://lubia-me.qiniudn.com/sniper_darwin_386">Darwin 32 bit</a></li>
+<li><a href="http://lubia-me.qiniudn.com/sniper_linux_amd64">Linux 64 bit</a></li>
+<li><a href="http://lubia-me.qiniudn.com/sniper_linux_386">Linux 32 bit</a></li>
+<li><a href="http://lubia-me.qiniudn.com/sniper_freebsd_amd64">FreeBSD 64 bit</a></li>
+<li><a href="http://lubia-me.qiniudn.com/sniper_freebsd_386">FreeBSD 32 bit</a></li>
+</ul><h2>
+<a name="%E5%8A%9F%E8%83%BD" class="anchor" href="#%E5%8A%9F%E8%83%BD"><span class="octicon octicon-link"></span></a>功能</h2>
+
+<p>以实用为原则，实现以下功能</p>
+
+<ul>
+<li>GET / POST</li>
+<li>keep-alive模式</li>
+<li>https</li>
+<li>图表展示结果</li>
+<li>测试多个目标</li>
+<li>支持大文件负载</li>
+<li>跨平台，支持Linux,FreeBSD,Darwin</li>
+</ul><h4>
+<a name="%E5%AF%B9%E6%AF%94%E5%90%8C%E7%B1%BB%E5%B7%A5%E5%85%B7" class="anchor" href="#%E5%AF%B9%E6%AF%94%E5%90%8C%E7%B1%BB%E5%B7%A5%E5%85%B7"><span class="octicon octicon-link"></span></a>对比同类工具</h4>
+
+<table>
+<tr>
+<td>工具 </td>
+      <td>编写语言 </td>
+      <td>keep-alive </td>
+      <td>https </td>
+      <td>多点测试 </td>
+      <td>结果展示 </td>
+      <td>代理</td>
+   </tr>
+<tr>
+<td>ab </td>
+      <td>c </td>
+      <td>NO </td>
+      <td>YES </td>
+      <td>NO </td>
+      <td>html，标准输出</td>
+      <td>YES </td>
+   </tr>
+<tr>
+<td>siege </td>
+      <td>c </td>
+      <td>YES </td>
+      <td>YES </td>
+      <td>YES </td>
+      <td>csv，标准输出</td>
+      <td>YES </td>
+   </tr>
+<tr>
+<td>http_load </td>
+      <td>c </td>
+      <td>NO </td>
+      <td>YES </td>
+      <td>YES </td>
+      <td>标准输出</td>
+      <td>YES </td>
+   </tr>
+<tr>
+<td>webbench </td>
+      <td>c </td>
+      <td>NO </td>
+      <td>YES </td>
+      <td>NO </td>
+      <td>标准输出</td>
+      <td>YES </td>
+   </tr>
+<tr>
+<td>sniper</td>
+      <td>go</td>
+      <td>YES </td>
+      <td>YES </td>
+      <td>YES </td>
+      <td>js+html5，标准输出</td>
+      <td>NO </td>
+   </tr>
+</table><h2>
+<a name="%E6%80%A7%E8%83%BD" class="anchor" href="#%E6%80%A7%E8%83%BD"><span class="octicon octicon-link"></span></a>性能</h2>
+
+<ul>
+<li>内存占用低于Apache Benchmark（ab）等主流负载工具</li>
+<li>执行速度接近ab，高并发时超过ab</li>
+<li>支持10k以上并发</li>
+<li>支持超大文件测试</li>
+</ul><p><img src="http://lubia-me.qiniudn.com/cmp.png" alt="Alt text"></p>
+
+<p>测试的详细情况，与各大负载测试工具的性能对比<a href="http://www.lubia.me/http-loader-compare">在此</a></p>
+
+<h2>
+<a name="%E5%9B%BE%E8%A1%A8%E5%B1%95%E7%A4%BA" class="anchor" href="#%E5%9B%BE%E8%A1%A8%E5%B1%95%E7%A4%BA"><span class="octicon octicon-link"></span></a>图表展示</h2>
+
+<ul>
+<li>统计分析每个请求</li>
+<li>输出建立连接时间</li>
+<li>输出服务端响应时间</li>
+<li>输出总时间</li>
+</ul><p>基于<a href="http://dygraphs.com/">dygraphs</a>与html5，详细展现服务端性能情况</p>
+
+<p>从测试结果中等距采样约1000样本，详细展现连接建立，链路传输和服务端执行情况</p>
+
+<p>下图展示了总时间和连接建立时间的对比</p>
+
+<p><img src="http://lubia-me.qiniudn.com/sniper_2.JPG" alt="Alt text"></p>
+
+<h2>
+<a name="%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" class="anchor" href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><span class="octicon octicon-link"></span></a>使用说明</h2>
+
+<h3>
+<a name="1-%E5%AE%89%E8%A3%85golang" class="anchor" href="#1-%E5%AE%89%E8%A3%85golang"><span class="octicon octicon-link"></span></a>1. 安装Golang</h3>
+
+<p>请参考astaxie的开源Golang书籍《Go Web 编程》一书，<a href="https://github.com/astaxie/build-web-application-with-golang/blob/master/ebook/01.1.md">Go安装</a>一节。</p>
+
+<h3>
+<a name="2-%E5%AE%89%E8%A3%85sniper" class="anchor" href="#2-%E5%AE%89%E8%A3%85sniper"><span class="octicon octicon-link"></span></a>2. 安装Sniper</h3>
+
+<pre><code>$ go get github.com/lubia/sniper
+$ go install github.com/lubia/sniper
+$ cp src/github.com/lubia/sniper/.sniperc ~
+</code></pre>
+
+<h3>
+<a name="3-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E" class="anchor" href="#3-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="octicon octicon-link"></span></a>3. 参数说明</h3>
+
+<h4>
+<a name="%E7%A4%BA%E4%BE%8B" class="anchor" href="#%E7%A4%BA%E4%BE%8B"><span class="octicon octicon-link"></span></a>示例</h4>
+
+<p>GET</p>
+
+<pre><code>$sniper -c 10 -n 100 http://www.google.com 
+</code></pre>
+
+<p>POST</p>
+
+<pre><code>$sniper -c 10 -n 100 -p postData.txt http://www.google.com
+</code></pre>
+
+<h4>
+<a name="%E5%8F%82%E6%95%B0" class="anchor" href="#%E5%8F%82%E6%95%B0"><span class="octicon octicon-link"></span></a>参数</h4>
+
+<h5>
+<a name="%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0" class="anchor" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0"><span class="octicon octicon-link"></span></a>命令行参数</h5>
+
+<pre><code>Usage: 
+   sniper [options] http[s]://hostname[:port][/path]                 http或https，支持域名或ip
+   sniper [options] -f urls.txt                                      测试多个服务端地址，文件格式：每个url一行
+Options: 
+   -c, --concurrent     concurrent users, default is 1.              并发数(默认为1)
+   -n, --requests       number of requests to perform.               总请求数
+   -r, --repetitions    number of times to run the test.             重复次数(n=c*r)
+   -t, --time           testing time, 30 mean 30 seconds.            测试时间(单位秒)
+   -R, --sniperc        specify an sniperc file to get config        配置文件地址(默认为$HOME/.sniperc)
+                        (default is $HOME/.sniperc).               
+   -f, --urlfile        select a specific URLS file.                 多个测试目标的url文件
+   -p, --post           select a specific file to POST.              POST模式
+   -T, --content-type   set Content-Type in request                  POST的数据类型(默认为text/plain)
+                        (default is text/plain).
+   -V, --Version        print the version number.                    打印sniper版本号
+   -h, --help           print this section.                          输出帮助信息
+   -C, --config         show the current config.                     输出当前配置文件的配置
+   -s, --plot           plot detail transactions' info               是否输出html展示测试结果(默认为true) 
+                        (true | false,default set true,              (注意:采用-t指定测试时间时,不会输出html)
+                        notice: set -t will not plot anyhow).
+
+</code></pre>
+
+<h5>
+<a name="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%82%E6%95%B0" class="anchor" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%82%E6%95%B0"><span class="octicon octicon-link"></span></a>配置文件参数</h5>
+
+<pre><code>说明：默认从$HOME/.sniperc读取配置文件，配置文件设置与命令行设置互为补充
+可通过命令行 -R 指定配置文件地址，-C 查看默认配置。
+</code></pre>
+
+<pre><code>[protocol]
+version = HTTP/1.1                            HTTP协议版本，1.1或1.0
+#connection = keep-alive                      connection模式，# 符号作为注释
+connection = close
+accept-encoding = gzip                        
+user-agent = golang &amp; sniper                  
+
+[header]
+#cookie = SSID=Abh_TYcDc6YSQh-GB              自定义消息头，等号连接键值对
+
+[process]
+timeout = 30                                  socket超时时间 
+failures = 64                                 最大失败次数，socket错误超过此值则程序退出
+
+[Authenticate]
+login = jeff:supersecret                      HTTP基本认证
+
+[ssl]
+ssl-cert = /root/cert.pem                     ssl-cert文件地址
+ssl-key = /root/key.pem                       ssl-key文件地址
+ssl-timeout = 30                              https超时
+</code></pre>
+
+<h5>
+<a name="%E7%BB%93%E6%9E%9C%E8%BE%93%E5%87%BA" class="anchor" href="#%E7%BB%93%E6%9E%9C%E8%BE%93%E5%87%BA"><span class="octicon octicon-link"></span></a>结果输出</h5>
+
+<p>图表输出到当前目录下plot.html</p>
+
+<pre><code>Transactions:                   1000 hits           总请求数
+Availability:                   100.00 %            完成百分百    
+Elapsed time:                   0.15 secs           sniper执行时间
+Document length:               1162 Bytes           服务端单个返回长度
+TotalTransfer:                  1.11 MB             总传输数据量
+Transaction rate:            6625.60 trans/sec      每秒事务数 
+Throughput:                     7.34 MB/sec         吞吐量 
+Successful:                     1000 hits           成功次数(结果码不为200也是成功)
+Failed:                           0 hits            失败次数(socket等链路错误) 
+TransactionTime:               1.495 ms(mean)       单个请求总耗时(平均)
+ConnectionTime:                0.596 ms(mean)       链路建立耗时(平均，tcp三次握手)
+ProcessTime:                   0.900 ms(mean)       服务端执行时间+传输时间(TransactionTime = ConnectionTime + ProcessTime)
+StateCode:                    1000(code 200)        结果码为200的数量
+</code></pre>
+
+<h2>
+<a name="%E5%85%B3%E4%BA%8E" class="anchor" href="#%E5%85%B3%E4%BA%8E"><span class="octicon octicon-link"></span></a>关于</h2>
+
+<h4>
+<a name="%E4%BD%9C%E8%80%85" class="anchor" href="#%E4%BD%9C%E8%80%85"><span class="octicon octicon-link"></span></a>作者</h4>
+
+<p>Lubia Yang,程序员</p>
+
+<p>博客：<a href="http://www.lubia.me">程式設計</a></p>
+
+<p>联络：yanyuan2046 at 126.com</p>
+
+<h4>
+<a name="licence" class="anchor" href="#licence"><span class="octicon octicon-link"></span></a>Licence</h4>
+
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0.</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/lubia">lubia</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
