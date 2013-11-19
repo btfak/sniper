@@ -204,7 +204,7 @@ StateCode:                    1000(code 200)        结果码为200的数量
 
 Lubia Yang,程序员
 
-博客：[程式設計](www.lubia.me)
+博客：[程式設計](http://www.lubia.me)
 
 联络：yanyuan2046 at 126.com
 
