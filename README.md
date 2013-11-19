@@ -4,7 +4,7 @@ Sniper
 
 >超低内存占用、丰富图表展示。是测试、分析、优化服务端性能的绝佳助手！
 
-###体验
+##体验
 提供以下可执行文件，可直接运行
 * Mac OSX 64 bit      
 * Mac OSX 32 bit
@@ -13,7 +13,7 @@ Sniper
 * Windows 64 bit
 * Windows 32 bit
 
-###功能
+##功能
 以实用为原则，实现以下功能
 - GET / POST
 - keep-alive模式
@@ -82,7 +82,7 @@ Sniper
 </table>
 
 
-###性能
+##性能
 - 内存占用低于Apache Benchmark（ab）等主流负载工具
 - 执行速度接近ab，高并发时超过ab
 - 支持10k以上并发
@@ -92,7 +92,7 @@ Sniper
 
 测试的详细情况，与各大负载测试工具的性能对比[在此](http://www.lubia.me/http-loader-compare)
 
-###图表展示
+##图表展示
 - 统计分析每个请求
 - 输出建立连接时间
 - 输出服务端响应时间
@@ -106,12 +106,19 @@ Sniper
 
 ![Alt text](http://lubia-me.qiniudn.com/sniper_2.JPG)
 
-###使用说明
-1. 安装Golang
-2. 安装Sniper 
-3. 参数说明
+##使用说明
+###1. 安装Golang
 
-###关于
+请参考astaxie的开源Golang书籍《Go Web 编程》一书，[Go安装](https://github.com/astaxie/build-web-application-with-golang/blob/master/ebook/01.1.md)一节。
+
+###2. 安装Sniper
+
+`$ go get github.com/lubia/sniper`
+`$ go install github.com/lubia/sniper`
+
+###3. 参数说明
+
+##关于
 - 友好项目
 - 作者
 - Licence
