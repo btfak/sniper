@@ -112,7 +112,7 @@ Sniper
 ###2. 安装Sniper
 
     $ go get github.com/lubia/sniper
-    $ go install github.com/lubia/sniper
+    $ cp src/github.com/lubia/sniper/.sniperc ~
 
 ###3. 参数说明
 
@@ -130,6 +130,10 @@ POST
 #####命令行参数
 
 ```
+Usage: 
+   sniper [options] http[s]://hostname[:port][/path]                 http或https，支持域名或ip
+   sniper [options] -f urls.txt                                      测试多个服务端地址，文件格式：每个url一行
+Options: 
    -c, --concurrent     concurrent users, default is 1.              并发数(默认为1)
    -n, --requests       number of requests to perform.               总请求数
    -r, --repetitions    number of times to run the test.             重复次数(n=c*r)
@@ -153,8 +157,31 @@ POST
 #####配置文件参数
 
     说明：默认从$HOME/.sniperc读取配置文件，配置文件设置与命令行设置互为补充
-    可通过命令行 -R 指定配置文件地址，-C 查看当前配置
+    可通过命令行 -R 指定配置文件地址，-C 查看当前配置。
 
+```
+   [protocol]
+   version = HTTP/1.1                            HTTP协议版本，1.1或1.0
+   #connection = keep-alive                      connection模式，# 符号作为注释
+   connection = close
+   accept-encoding = gzip                        
+   user-agent = golang & sniper                  
+
+   [header]
+   #cookie = SSID=Abh_TYcDc6YSQh-GB              自定义消息头，等号连接键值对
+
+   [process]
+   timeout = 30                                  socket超时时间 
+   failures = 64                                 最大失败次数，socket错误超过此值则程序退出
+
+   [Authenticate]
+   login = jeff:supersecret                      HTTP基本认证
+
+   [ssl]
+   ssl-cert = /root/cert.pem                     ssl-cert文件地址
+   ssl-key = /root/key.pem                       ssl-key文件地址
+   ssl-timeout = 30                              https超时
+```
 
 ##关于
 - 友好项目
