@@ -1,4 +1,4 @@
-Sniper
+Sniper[![Build Status](https://drone.io/github.com/lubia/sniper/status.png)](https://drone.io/github.com/lubia/sniper/latest)
 ======
 >Sniper是一个功能强大、高性能的HTTP负载工具,采用Golang编写。利用协程并发优势，实现海量并发、
 
@@ -184,6 +184,9 @@ ssl-timeout = 30                              https超时
 ```
 
 #####结果输出
+
+图表输出到当面目标plot.html
+
 ```
 Transactions:                   1000 hits           总请求数
 Availability:                   100.00 %            完成百分百    
