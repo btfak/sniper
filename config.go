@@ -274,19 +274,26 @@ func (c *Config) parseUrlFile() {
 	}
 	s := bufio.NewScanner(f)
 	s.Split(bufio.ScanLines)
-	c.Basic.https = true
 	for s.Scan() {
+		if s.Text() == "" {
+			break
+		}
 		isURL, _ := regexp.MatchString(`http.*?://.*`, s.Text())
 		if !isURL {
 			sniperUsage()
 		}
-		dst := strings.Split(s.Text(), "/")
-		if dst[0][:5] != "https" {
-			c.Basic.https = false
+		u, err := url.Parse(s.Text())
+		if err != nil {
+			fmt.Println(err)
+			sniperUsage()
+		}
+
+		if u.Scheme == "https" {
+			c.Basic.https = true
 		}
 
 		var ip, port string
-		addr := strings.Split(dst[2], ":")
+		addr := strings.Split(u.Host, ":")
 		ip = addr[0]
 		if len(addr) == 2 {
 			port = addr[1]
@@ -295,8 +302,7 @@ func (c *Config) parseUrlFile() {
 		} else {
 			sniperUsage()
 		}
-
-		c.Basic.target.set(target{ip, port, dst[3]})
+		c.Basic.target.set(target{ip, port, u.Path})
 	}
 }
 

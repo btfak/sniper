@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"runtime"
 )
 
@@ -8,9 +9,10 @@ func main() {
 	initConfig()
 	prepBattle()
 	if err := taste(); err != nil {
-		lg(err)
+		fmt.Println(err)
 		return
 	}
+
 	go manager.Monitor()
 	go Snipe()
 
@@ -19,8 +21,8 @@ func main() {
 
 func prepBattle() {
 	over = make(chan struct{})
-	//runtime.GOMAXPROCS(runtime.NumCPU())
-	runtime.GOMAXPROCS(1)
+	//TODO:multicore but low performance
+	runtime.GOMAXPROCS(1) //runtime.NumCPU()
 	record.trans = make(chan *transaction, config.Command.concurrent)
 	message.prepareContent()
 }
