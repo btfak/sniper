@@ -207,8 +207,10 @@ StateCode:                    1000(code 200)        结果码为200的数量
 ```
 ##关于
 ####友好项目
-[gohttpbench](https://github.com/parkghost/gohttpbench)
-[vegeta](https://github.com/tsenart/vegeta)
+
+- [gohttpbench](https://github.com/parkghost/gohttpbench)
+- [vegeta](https://github.com/tsenart/vegeta)
+
 ####作者
 
 Lubia Yang,程序员
