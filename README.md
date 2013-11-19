@@ -6,10 +6,12 @@ Sniper
 
 ###体验
 提供以下可执行文件，可直接运行
-* Mac OSX 64 bit
+* Mac OSX 64 bit      
 * Mac OSX 32 bit
 * Linux 64 bit
 * Linux 32 bit
+* Windows 64 bit
+* Windows 32 bit
 
 ###功能
 以实用为原则，实现以下功能
@@ -19,9 +21,10 @@ Sniper
 - 图表展示结果
 - 测试多个目标
 - 支持大文件负载
+- 跨平台，支持Linux,Windows,FreeBSD,Darwin
 
 ####对比同类工具
-<table>
+<table class="table table-bordered table-striped table-condensed">
    <tr>
       <td>工具 </td>
       <td>编写语言 </td>
@@ -85,7 +88,9 @@ Sniper
 - 支持10k以上并发
 - 支持超大文件测试
 
-与各大负载测试工具的性能对比[在此](http://www.lubia.me/http-loader-compare)
+![Alt text](http://lubia-me.qiniudn.com/cmp.png)
+
+测试的详细情况，与各大负载测试工具的性能对比[在此](http://www.lubia.me/http-loader-compare)
 
 ###图表展示
 - 统计分析每个请求
