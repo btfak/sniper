@@ -19,7 +19,7 @@ Sniper
 - 图表展示结果
 - 测试多个目标
 - 支持大文件负载
-- 跨平台，支持Linux,Windows,FreeBSD,Darwin
+- 跨平台，支持Linux,FreeBSD,Darwin
 
 ####对比同类工具
 <table class="table table-bordered table-striped table-condensed">
