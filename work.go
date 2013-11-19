@@ -107,6 +107,7 @@ func (c *Worker) fire() {
 		return
 	}
 	sum := 0
+	var isFirstLine = true
 	for {
 		n, err := c.conn.Read(c.data)
 		if err != nil {
@@ -116,10 +117,12 @@ func (c *Worker) fire() {
 			c.trans.totalTime = 0
 			record.trans <- c.trans
 			c.conn.Close()
-			c.fire()
+			return
 		}
-		if c.data[9] == 50 && c.data[10] == 48 && c.data[11] == 48 {
-			c.trans.code = 200
+		if isFirstLine && len(c.data) > 12 {
+			if c.data[9] == 50 && c.data[10] == 48 && c.data[11] == 48 {
+				c.trans.code = 200
+			}
 		}
 		sum += n
 		if sum == maxRecvSize {
@@ -191,7 +194,7 @@ func (c *Worker) request() {
 			record.trans <- c.trans
 			return
 		}
-		if isFirstLine {
+		if isFirstLine && len(c.data) > 12 {
 			if c.data[9] == 50 && c.data[10] == 48 && c.data[11] == 48 {
 				c.trans.code = 200
 			}
