@@ -183,6 +183,22 @@ ssl-key = /root/key.pem                       ssl-key文件地址
 ssl-timeout = 30                              https超时
 ```
 
+#####结果输出
+```
+Transactions:                   1000 hits           总请求数
+Availability:                   100.00 %            完成百分百    
+Elapsed time:                   0.15 secs           sniper执行时间
+Document length:               1162 Bytes           服务端单个返回长度
+TotalTransfer:                  1.11 MB             总传输数据量
+Transaction rate:            6625.60 trans/sec      每秒事务数 
+Throughput:                     7.34 MB/sec         吞吐量 
+Successful:                     1000 hits           成功次数(结果码不为200也是成功)
+Failed:                           0 hits            失败次数(socket等链路错误) 
+TransactionTime:               1.495 ms(mean)       单个请求总耗时(平均)
+ConnectionTime:                0.596 ms(mean)       链路建立耗时(平均，tcp三次握手)
+ProcessTime:                   0.900 ms(mean)       服务端执行时间+传输时间(TransactionTime = ConnectionTime + ProcessTime)
+StateCode:                    1000(code 200)        结果码为200的数量
+```
 ##关于
 - 友好项目
 - 作者
