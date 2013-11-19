@@ -102,7 +102,11 @@ Sniper       [![Build Status](https://drone.io/github.com/lubia/sniper/status.pn
 
 从测试结果中等距采样约1000样本，详细展现连接建立，链路传输和服务端执行情况
 
-下图展示了总时间和连接建立时间的对比
+下图展示了总时间和连接建立时间的对比。Golang是怎样得到连接建立的时间呢？
+
+原来是本人基于net库实现了HTTP协议栈，重构而不是官方net/http库才拿到详细的信息，
+
+提升了性能。
 
 ![Alt text](http://lubia-me.qiniudn.com/sniper_2.JPG)
 
