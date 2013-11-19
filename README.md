@@ -113,11 +113,20 @@ Sniper
 
 ###2. 安装Sniper
 
-`$ go get github.com/lubia/sniper`
-`$ go install github.com/lubia/sniper`
+    $ go get github.com/lubia/sniper
+    $ go install github.com/lubia/sniper
 
 ###3. 参数说明
 
+####示例
+GET
+
+    $sniper -c 10 -n 100 http://www.google.com 
+
+POST
+
+    $sniper -c 10 -n 100 -p postData.txt http://www.google.com
+    
 ##关于
 - 友好项目
 - 作者
