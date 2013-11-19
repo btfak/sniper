@@ -127,7 +127,7 @@ POST
     
 ####参数
 
-命令行参数
+#####命令行参数
 
 ```
    -c, --concurrent     concurrent users, default is 1.              并发数(默认为1)
@@ -143,11 +143,19 @@ POST
    -V, --Version        print the version number.                    打印sniper版本号
    -h, --help           print this section.                          输出帮助信息
    -C, --config         show the current config.                     输出当前配置文件的配置
-   -s, --plot           plot detail transactions' info               是否输出html展示测试结果 
-                        (true | false,default set true,              (默认为true,采用-t指定测试时间时,不会输出html)
+   -s, --plot           plot detail transactions' info               是否输出html展示测试结果(默认为true) 
+                        (true | false,default set true,              (注意:采用-t指定测试时间时,不会输出html)
                         notice: set -t will not plot anyhow).
 
 ```
+
+
+#####配置文件参数
+
+    说明：默认从$HOME/.sniperc读取配置文件，配置文件设置与命令行设置互为补充
+    可通过命令行 -R 指定配置文件地址，-C 查看当前配置
+
+
 ##关于
 - 友好项目
 - 作者
