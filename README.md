@@ -1,6 +1,6 @@
 Sniper       [![Build Status](https://drone.io/github.com/lubia/sniper/status.png)](https://drone.io/github.com/lubia/sniper/latest)
 ======
->Sniper is a powerful and high-performance http load tester writing in Golang. Basing on advantage of goroutine,achieving high concurrency,low memory,rice graphics display.  
+>Sniper is a powerful and high-performance http load tester writing in Golang. Basing on advantage of goroutine,achieving high concurrency,low memory,rich graphics display.  
 
 ##Experience
 Pre-compiled executables
@@ -94,7 +94,7 @@ To get the detail of this performance comparison,[click me](http://www.lubia.me/
 - Output server processing time
 - Output total time
 
-Basing on [dygraphs](http://dygraphs.com/)and html5，show the detail of server's performance. Get 1000 samples from whole result,show the details of connect,processing,and server's response.
+Basing on [dygraphs](http://dygraphs.com/) and html5，show the detail of server's performance. Get 1000 samples from whole result,show the details of connect,processing,and server's response.
 
 The chart below show the total time and connect time. Wait,how can golang get the connect time ? In a word,Sniper implements part of HTTP protocol stack, discard net/http package to get the details. Also improve the performance. 
 
@@ -215,5 +215,4 @@ Contact：yanyuan2046 at 126.com
 ####Licence
 [Apache License, Version 2.0.](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-###中文文档
-[点击此处](https://github.com/lubia/sniper/blob/master/README_CN.md)
+####[中文文档](https://github.com/lubia/sniper/blob/master/README_CN.md)
