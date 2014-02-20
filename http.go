@@ -26,7 +26,7 @@ func (m *Message) buildHeader() {
 	if path == "" {
 		path = "/"
 	}
-	line := fmt.Sprintf("%s%s%s", config.Basic.method+" ", path+" ", config.Protocol.version+"\r\n")
+	line := fmt.Sprintf("%s%s%s", config.Basic.method+" ", path+"?"+config.Basic.target[0].param+" ", config.Protocol.version+"\r\n")
 	msg = msg + line
 
 	//host

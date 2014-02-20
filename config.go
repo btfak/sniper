@@ -18,9 +18,10 @@ var config Config
 type targetSet []target
 
 type target struct {
-	ip   string
-	port string
-	path string
+	ip    string
+	port  string
+	path  string
+	param string
 }
 
 func (t *targetSet) set(a target) {
@@ -302,7 +303,7 @@ func (c *Config) parseUrlFile() {
 		} else {
 			sniperUsage()
 		}
-		c.Basic.target.set(target{ip, port, u.Path})
+		c.Basic.target.set(target{ip, port, u.Path, u.RawQuery})
 	}
 }
 
@@ -335,7 +336,7 @@ func (c *Config) parseUrl(fs *flag.FlagSet) {
 	} else {
 		sniperUsage()
 	}
-	c.Basic.target.set(target{ip, port, u.Path})
+	c.Basic.target.set(target{ip, port, u.Path, u.RawQuery})
 }
 
 func initConfig() {
