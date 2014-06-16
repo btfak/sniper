@@ -80,22 +80,23 @@ type Worker struct {
 
 func (c *Worker) fire() {
 	var err error
+	var deadline int
 	c.trans.currentTime = time.Now()
 
 	//http & https
 	if config.Basic.https {
 		c.conn, err = tls.Dial("tcp", config.Basic.target[0].ip+":"+config.Basic.target[0].port, c.tlsConfig)
-		c.conn.SetDeadline(c.trans.currentTime.Add(time.Second * time.Duration(config.Ssl.timeout)))
+		deadline = config.Ssl.timeout
 	} else {
 		c.conn, err = net.DialTCP("tcp", nil, c.tcpAddr)
-		c.conn.SetDeadline(c.trans.currentTime.Add(time.Second * time.Duration(config.Process.timeout)))
+		deadline = config.Process.timeout
 	}
 	if err != nil {
 		c.trans.totalTime = 0
 		record.trans <- c.trans
-		c.conn.Close()
 		return
 	}
+	c.conn.SetDeadline(c.trans.currentTime.Add(time.Second * time.Duration(deadline)))
 
 	connection := time.Now()
 	c.trans.connectionTime = connection.Sub(c.trans.currentTime)
