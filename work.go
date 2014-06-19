@@ -142,12 +142,17 @@ func (c *Worker) fire() {
 func (c *Worker) shoot() {
 	c.connect()
 	for {
-		c.request()
+		success := c.request()
+		if !success {
+			c.conn.Close()
+			c.connect()
+		}
 	}
 }
 
 func (c *Worker) connect() {
 	var err error
+	var deadline int
 	ip := config.Basic.target[0].ip
 	port := config.Basic.target[0].port
 
@@ -157,30 +162,31 @@ func (c *Worker) connect() {
 	//http & https
 	if config.Basic.https {
 		c.conn, err = tls.Dial("tcp", ip+":"+port, c.tlsConfig)
-		c.conn.SetDeadline(begin.Add(time.Second * time.Duration(config.Ssl.timeout)))
+		deadline = config.Ssl.timeout
 	} else {
 		c.conn, err = net.DialTCP("tcp", nil, c.tcpAddr)
-		c.conn.SetDeadline(begin.Add(time.Second * time.Duration(config.Process.timeout)))
+		deadline = config.Process.timeout
 	}
 
 	if err != nil {
 		c.trans.totalTime = 0
 		record.trans <- c.trans
-		c.conn.Close()
 		c.connect()
 	}
+	c.conn.SetDeadline(c.trans.currentTime.Add(time.Second * time.Duration(deadline)))
+
 	connection := time.Now()
 	c.trans.connectionTime = connection.Sub(begin)
 }
 
-func (c *Worker) request() {
+func (c *Worker) request() bool {
 	connection := time.Now()
 	c.trans.currentTime = connection
 	_, err := c.conn.Write(message.content)
 	if err != nil {
 		c.trans.totalTime = 0
 		record.trans <- c.trans
-		return
+		return true
 	}
 
 	sum := 0
@@ -188,12 +194,20 @@ func (c *Worker) request() {
 	for {
 		n, err := c.conn.Read(c.data)
 		if err != nil {
+			// When server close the connection or server reset the connection
+			// We don't reguard it as an request error, just reconnect server.
 			if err == io.EOF {
-				break
+				return false
+			} else if opErr, ok := err.(*net.OpError); ok {
+				if opErr.Err.Error() == "connection reset by peer" {
+					return false
+				}
 			}
+
+			// Other situation we reguard it as request error.
 			c.trans.totalTime = 0
 			record.trans <- c.trans
-			return
+			return true
 		}
 		if isFirstLine && len(c.data) > 12 {
 			if c.data[9] == 50 && c.data[10] == 48 && c.data[11] == 48 {
@@ -211,6 +225,7 @@ func (c *Worker) request() {
 	c.trans.totalTime = response.Sub(connection)
 	record.trans <- c.trans
 	c.trans.connectionTime = 0
+	return true
 }
 
 func taste() error {
