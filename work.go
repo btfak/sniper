@@ -274,6 +274,7 @@ func taste() error {
 		var head_len int
 
 		buffer := bufio.NewReader(conn)
+		var hasContentLength bool
 		for {
 			line, _ := buffer.ReadString('\n')
 			head_len += len(line)
@@ -282,7 +283,7 @@ func taste() error {
 				c := strings.Replace(line, "\n", "", -1)
 				c = strings.Replace(c, "\r", "", -1)
 				if c == "" {
-					if content_len == 0 && chunked == false {
+					if hasContentLength == false && chunked == false {
 						return errors.New("http stack err")
 					}
 					break
@@ -296,6 +297,7 @@ func taste() error {
 				if err != nil {
 					return err
 				}
+				hasContentLength = true
 			}
 
 			//Transfer-Encoding
