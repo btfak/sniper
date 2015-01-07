@@ -123,8 +123,8 @@ func (c *Worker) fire() {
 		if isFirstLine && len(c.data) > 12 {
 			if c.data[9] == 50 && c.data[10] == 48 && c.data[11] == 48 {
 				c.trans.code = 200
-                isFirstLine = false
 			}
+ 			isFirstLine = false
 		}
 		sum += n
 		if sum == maxRecvSize {
