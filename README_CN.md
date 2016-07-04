@@ -2,6 +2,8 @@ Sniper       [![Build Status](https://drone.io/github.com/lubia/sniper/status.pn
 ======
 >Sniper是一个功能强大、高性能的HTTP负载工具,采用Golang编写。利用协程并发优势，实现海量并发、超低内存占用、丰富图表展示。是测试、分析、优化服务端性能的绝佳助手！
 
+##注意：这是一个实验项目
+
 ##体验
 提供以下可执行文件，可直接运行
 * [Darwin 64 bit](http://lubia-me.qiniudn.com/sniper_darwin_amd64)      
@@ -124,21 +126,21 @@ Sniper       [![Build Status](https://drone.io/github.com/lubia/sniper/status.pn
 ####示例
 GET
 
-    $sniper -c 10 -n 100 http://www.google.com 
+    $sniper -c 10 -n 100 http://www.google.com
 
 POST
 
     $sniper -c 10 -n 100 -p postData.txt http://www.google.com
-    
+
 ####参数
 
 #####命令行参数
 
 ```
-Usage: 
+Usage:
    sniper [options] http[s]://hostname[:port][/path]                 http或https，支持域名或ip
    sniper [options] -f urls.txt                                      测试多个服务端地址，文件格式：每个url一行
-Options: 
+Options:
    -c, --concurrent     concurrent users, default is 1.              并发数(默认为1)
    -n, --requests       number of requests to perform.               总请求数
    -r, --repetitions    number of times to run the test.             重复次数(n=c*r)
@@ -152,7 +154,7 @@ Options:
    -V, --Version        print the version number.                    打印sniper版本号
    -h, --help           print this section.                          输出帮助信息
    -C, --config         show the current config.                     输出当前配置文件的配置
-   -s, --plot           plot detail transactions' info               是否输出html展示测试结果(默认为true) 
+   -s, --plot           plot detail transactions' info               是否输出html展示测试结果(默认为true)
                         (true | false,default set true,              (注意:采用-t指定测试时间时,不会输出html)
                         notice: set -t will not plot anyhow).
 
@@ -176,7 +178,7 @@ user-agent = golang & sniper
 #cookie = SSID=Abh_TYcDc6YSQh-GB              自定义消息头，等号连接键值对
 
 [process]
-timeout = 30                                  socket超时时间 
+timeout = 30                                  socket超时时间
 failures = 64                                 最大失败次数，socket错误超过此值则程序退出
 
 [Authenticate]
@@ -198,10 +200,10 @@ Availability:                   100.00 %            完成百分百
 Elapsed time:                   0.15 secs           sniper执行时间
 Document length:               1162 Bytes           服务端单个返回长度
 TotalTransfer:                  1.11 MB             总传输数据量
-Transaction rate:            6625.60 trans/sec      每秒事务数 
-Throughput:                     7.34 MB/sec         吞吐量 
+Transaction rate:            6625.60 trans/sec      每秒事务数
+Throughput:                     7.34 MB/sec         吞吐量
 Successful:                     1000 hits           成功次数(结果码不为200也是成功)
-Failed:                           0 hits            失败次数(socket等链路错误) 
+Failed:                           0 hits            失败次数(socket等链路错误)
 TransactionTime:               1.495 ms(mean)       单个请求总耗时(平均)
 ConnectionTime:                0.596 ms(mean)       链路建立耗时(平均，tcp三次握手)
 ProcessTime:                   0.900 ms(mean)       服务端执行时间+传输时间(TransactionTime = ConnectionTime + ProcessTime)
@@ -217,7 +219,7 @@ StateCode:                    1000(code 200)        结果码为200的数量
 
 Lubia Yang,程序员
 
-博客：[程式設計](http://www.lubia.me)
+博客：[Programer](http://www.lubia.cn)
 
 联络：yanyuan2046 at 126.com
 

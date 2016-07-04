@@ -2,7 +2,10 @@ Sniper       [![Build Status](https://drone.io/github.com/lubia/sniper/status.pn
 ======
 >Sniper is a powerful and high-performance http load tester writing in Golang. Basing on advantage of goroutine,achieving high concurrency,low memory,rich graphics display.  
 
-##Experience
+
+##Notice: This is a experience project
+
+##Try it
 Pre-compiled executables
 * [Darwin 64 bit](http://lubia-me.qiniudn.com/sniper_darwin_amd64)      
 * [Darwin 32 bit](http://lubia-me.qiniudn.com/sniper_darwin_386)
@@ -96,7 +99,7 @@ To get the detail of this performance comparison,[click me](http://www.lubia.me/
 
 Basing on [dygraphs](http://dygraphs.com/) and html5，show the detail of server's performance. Get 1000 samples from whole result,show the details of connect,processing,and server's response.
 
-The chart below show the total time and connect time. Wait,how can golang get the connect time ? In a word,Sniper implements part of HTTP protocol stack, discard net/http package to get the details. Also improve the performance. 
+The chart below show the total time and connect time. Wait,how can golang get the connect time ? In a word,Sniper implements part of HTTP protocol stack, discard net/http package to get the details. Also improve the performance.
 
 ![Alt text](http://lubia-me.qiniudn.com/sniper_2.JPG)
 
@@ -116,21 +119,21 @@ Please reference  [Go install](https://github.com/astaxie/build-web-application-
 ####Example
 GET
 
-    $sniper -c 10 -n 100 http://www.google.com 
+    $sniper -c 10 -n 100 http://www.google.com
 
 POST
 
     $sniper -c 10 -n 100 -p postData.txt http://www.google.com
-    
+
 ####Parameter
 
 #####Command line parameter
 
 ```
-Usage: 
+Usage:
    sniper [options] http[s]://hostname[:port][/path]                 http or https，ip or domain support
    sniper [options] -f urls.txt                                      multi-target，format：each url per line
-Options: 
+Options:
    -c, --concurrent     concurrent users, default is 1.              
    -n, --requests       number of requests to perform.               
    -r, --repetitions    number of times to run the test.             
@@ -167,7 +170,7 @@ user-agent = golang & sniper
 #cookie = SSID=Abh_TYcDc6YSQh-GB              user-defined header
 
 [process]
-timeout = 30                                  socket timeout 
+timeout = 30                                  socket timeout
 failures = 64                                 max failure，socket failure over it then application break
 
 [Authenticate]
@@ -175,7 +178,7 @@ login = jeff:supersecret                      HTTP Authenticate
 
 [ssl]
 ssl-cert = /root/cert.pem                     ssl-cert file
-ssl-key = /root/key.pem                       ssl-key file 
+ssl-key = /root/key.pem                       ssl-key file
 ssl-timeout = 30                              https timeout
 ```
 
@@ -189,16 +192,16 @@ Availability:                   100.00 %            percentage completion
 Elapsed time:                   0.15 secs           sniper elapsed time
 Document length:               1162 Bytes           single response length
 TotalTransfer:                  1.11 MB             total data transfer
-Transaction rate:            6625.60 trans/sec      transactions per second 
-Throughput:                     7.34 MB/sec         throughput 
+Transaction rate:            6625.60 trans/sec      transactions per second
+Throughput:                     7.34 MB/sec         throughput
 Successful:                     1000 hits           result code not 200 also successful
-Failed:                           0 hits            socket errors 
+Failed:                           0 hits            socket errors
 TransactionTime:               1.495 ms(mean)       each request total time (average)
 ConnectionTime:                0.596 ms(mean)       connect time(average，tcp handshake)
 ProcessTime:                   0.900 ms(mean)       TransactionTime = ConnectionTime + ProcessTime
 StateCode:                    1000(code 200)        the number of result code is 200
 ```
-##About 
+##About
 ####Twin projects
 
 - [gohttpbench](https://github.com/parkghost/gohttpbench)
@@ -208,7 +211,7 @@ StateCode:                    1000(code 200)        the number of result code is
 
 Lubia Yang,programmer in finance
 
-Blog：[Program Design](http://www.lubia.me)
+Blog：[Programer](http://www.lubia.cn)
 
 Contact：yanyuan2046 at 126.com
 
