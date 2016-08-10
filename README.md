@@ -1,9 +1,10 @@
+
 Sniper       [![Build Status](https://drone.io/github.com/lubia/sniper/status.png)](https://drone.io/github.com/lubia/sniper/latest)
 ======
 >Sniper is a powerful and high-performance http load tester writing in Golang. Basing on advantage of goroutine,achieving high concurrency,low memory,rich graphics display.  
 
 
-##Notice: This is a experience project
+##Notice: This project is on pre-alpha stage !
 
 ##Try it
 Pre-compiled executables
