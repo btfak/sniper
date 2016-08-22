@@ -1,4 +1,4 @@
-Sniper       [![Build Status](https://drone.io/github.com/lubia/sniper/status.png)](https://drone.io/github.com/lubia/sniper/latest)
+Sniper       [![Build Status](https://drone.io/github.com/btfak/sniper/status.png)](https://drone.io/github.com/btfak/sniper/latest)
 ======
 >Sniper是一个功能强大、高性能的HTTP负载工具,采用Golang编写。利用协程并发优势，实现海量并发、超低内存占用、丰富图表展示。是测试、分析、优化服务端性能的绝佳助手！
 
@@ -90,7 +90,6 @@ Sniper       [![Build Status](https://drone.io/github.com/lubia/sniper/status.pn
 
 ![Alt text](http://lubia-me.qiniudn.com/cmp.png)
 
-测试的详细情况，与各大负载测试工具的性能对比[在此](http://www.lubia.me/http-loader-compare)
 
 ##图表展示
 - 统计分析每个请求
@@ -217,9 +216,7 @@ StateCode:                    1000(code 200)        结果码为200的数量
 
 ####作者
 
-Lubia Yang,程序员
-
-博客：[Programer](http://www.lubia.cn)
+博客：[Programer](http://www.btfak.com)
 
 联络：yanyuan2046 at 126.com
 

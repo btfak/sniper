@@ -1,5 +1,5 @@
 
-Sniper       [![Build Status](https://drone.io/github.com/lubia/sniper/status.png)](https://drone.io/github.com/lubia/sniper/latest)
+Sniper       [![Build Status](https://drone.io/github.com/btfak/sniper/status.png)](https://drone.io/github.com/btfak/sniper/latest)
 ======
 >Sniper is a powerful and high-performance http load tester writing in Golang. Basing on advantage of goroutine,achieving high concurrency,low memory,rich graphics display.  
 
@@ -89,8 +89,6 @@ Pre-compiled executables
 - Large file support
 
 ![Alt text](http://lubia-me.qiniudn.com/compare.jpg)
-
-To get the detail of this performance comparison,[click me](http://www.lubia.me/http-loader-compare)
 
 ##Graphics display
 - Analyse each request and record it
@@ -210,13 +208,11 @@ StateCode:                    1000(code 200)        the number of result code is
 
 ####Author
 
-Lubia Yang,programmer in finance
-
-Blog：[Programer](http://www.lubia.cn)
+Blog：[Programer](http://www.btfak.com)
 
 Contact：yanyuan2046 at 126.com
 
 ####Licence
 [Apache License, Version 2.0.](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-####[中文文档](https://github.com/lubia/sniper/blob/master/README_CN.md)
+####[中文文档](https://github.com/btfak/sniper/blob/master/README_CN.md)
