@@ -1,12 +1,12 @@
 
-Sniper       [![Build Status](https://drone.io/github.com/btfak/sniper/status.png)](https://drone.io/github.com/btfak/sniper/latest)
+Sniper
 ======
 >Sniper is a powerful and high-performance http load tester writing in Golang. Basing on advantage of goroutine,achieving high concurrency,low memory,rich graphics display.  
 
 
-##Notice: This project is on pre-alpha stage !
+## Notice: This project is on pre-alpha stage !
 
-##Try it
+## Try it
 Pre-compiled executables
 * [Darwin 64 bit](http://lubia-me.qiniudn.com/sniper_darwin_amd64)      
 * [Darwin 32 bit](http://lubia-me.qiniudn.com/sniper_darwin_386)
@@ -15,7 +15,7 @@ Pre-compiled executables
 * [FreeBSD 64 bit](http://lubia-me.qiniudn.com/sniper_freebsd_amd64)
 * [FreeBSD 32 bit](http://lubia-me.qiniudn.com/sniper_freebsd_386)
 
-##Features
+## Features
 - GET / POST
 - Keep-alive
 - Https
@@ -24,7 +24,7 @@ Pre-compiled executables
 - Large file support
 - Cross-platform——Linux,FreeBSD,Darwin
 
-##Compare
+## Compare
 <table class="table table-bordered table-striped table-condensed">
    <tr>
       <td>tool </td>
@@ -83,14 +83,14 @@ Pre-compiled executables
 </table>
 
 
-##Performance
+## Performance
 - Memory usage less than Apache Benchmark（ab）
 - Execution speed close to ab
 - Large file support
 
 ![Alt text](http://lubia-me.qiniudn.com/compare.jpg)
 
-##Graphics display
+## Graphics display
 - Analyse each request and record it
 - Output http connect time
 - Output server processing time
@@ -102,20 +102,20 @@ The chart below show the total time and connect time. Wait,how can golang get th
 
 ![Alt text](http://lubia-me.qiniudn.com/sniper_2.JPG)
 
-##Usage manual
-###1. install Golang
+## Usage manual
+### 1. install Golang
 
 Please reference  [Go install](https://github.com/astaxie/build-web-application-with-golang/blob/master/ebook/01.1.md) chapter of open-source Golang book "build-web-application-with-golang".
 
-###2. install Sniper
+### 2. install Sniper
 
     $ go get github.com/lubia/sniper
     $ go install github.com/lubia/sniper
     $ cp src/github.com/lubia/sniper/.sniperc ~
 
-###3. Parameter declaration
+### 3. Parameter declaration
 
-####Example
+#### Example
 GET
 
     $sniper -c 10 -n 100 http://www.google.com
@@ -124,9 +124,9 @@ POST
 
     $sniper -c 10 -n 100 -p postData.txt http://www.google.com
 
-####Parameter
+#### Parameter
 
-#####Command line parameter
+##### Command line parameter
 
 ```
 Usage:
@@ -153,7 +153,7 @@ Options:
 ```
 
 
-#####Config file parameter
+##### Config file parameter
 
     Notice：default get config file from $HOME/.sniperc，config file and command line parameter complement each other. CMD -R to specified config file, CMD -C to get default configuration.  
 
@@ -181,7 +181,7 @@ ssl-key = /root/key.pem                       ssl-key file
 ssl-timeout = 30                              https timeout
 ```
 
-#####Output
+##### Output
 
 chart output to current directory "plot.html"
 
@@ -200,19 +200,19 @@ ConnectionTime:                0.596 ms(mean)       connect time(average，tcp h
 ProcessTime:                   0.900 ms(mean)       TransactionTime = ConnectionTime + ProcessTime
 StateCode:                    1000(code 200)        the number of result code is 200
 ```
-##About
-####Twin projects
+## About
+#### Twin projects
 
 - [gohttpbench](https://github.com/parkghost/gohttpbench)
 - [vegeta](https://github.com/tsenart/vegeta)
 
-####Author
+#### Author
 
 Blog：[Programer](http://www.btfak.com)
 
 Contact：yanyuan2046 at 126.com
 
-####Licence
+#### Licence
 [Apache License, Version 2.0.](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-####[中文文档](https://github.com/btfak/sniper/blob/master/README_CN.md)
+#### [中文文档](https://github.com/btfak/sniper/blob/master/README_CN.md)

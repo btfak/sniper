@@ -1,10 +1,10 @@
-Sniper       [![Build Status](https://drone.io/github.com/btfak/sniper/status.png)](https://drone.io/github.com/btfak/sniper/latest)
+Sniper
 ======
 >Sniper是一个功能强大、高性能的HTTP负载工具,采用Golang编写。利用协程并发优势，实现海量并发、超低内存占用、丰富图表展示。是测试、分析、优化服务端性能的绝佳助手！
 
-##注意：这是一个实验项目
+## 注意：这是一个实验项目
 
-##体验
+## 体验
 提供以下可执行文件，可直接运行
 * [Darwin 64 bit](http://lubia-me.qiniudn.com/sniper_darwin_amd64)      
 * [Darwin 32 bit](http://lubia-me.qiniudn.com/sniper_darwin_386)
@@ -13,7 +13,7 @@ Sniper       [![Build Status](https://drone.io/github.com/btfak/sniper/status.pn
 * [FreeBSD 64 bit](http://lubia-me.qiniudn.com/sniper_freebsd_amd64)
 * [FreeBSD 32 bit](http://lubia-me.qiniudn.com/sniper_freebsd_386)
 
-##功能
+## 功能
 以实用为原则，实现以下功能
 - GET / POST
 - keep-alive模式
@@ -23,7 +23,7 @@ Sniper       [![Build Status](https://drone.io/github.com/btfak/sniper/status.pn
 - 支持大文件负载
 - 跨平台，支持Linux,FreeBSD,Darwin
 
-####对比同类工具
+#### 对比同类工具
 <table class="table table-bordered table-striped table-condensed">
    <tr>
       <td>工具 </td>
@@ -82,7 +82,7 @@ Sniper       [![Build Status](https://drone.io/github.com/btfak/sniper/status.pn
 </table>
 
 
-##性能
+## 性能
 - 内存占用低于Apache Benchmark（ab）等主流负载工具
 - 执行速度接近ab，高并发时超过ab
 - 支持10k以上并发
@@ -91,7 +91,7 @@ Sniper       [![Build Status](https://drone.io/github.com/btfak/sniper/status.pn
 ![Alt text](http://lubia-me.qiniudn.com/cmp.png)
 
 
-##图表展示
+## 图表展示
 - 统计分析每个请求
 - 输出建立连接时间
 - 输出服务端响应时间
@@ -109,20 +109,20 @@ Sniper       [![Build Status](https://drone.io/github.com/btfak/sniper/status.pn
 
 ![Alt text](http://lubia-me.qiniudn.com/sniper_2.JPG)
 
-##使用说明
-###1. 安装Golang
+## 使用说明
+### 1. 安装Golang
 
 请参考astaxie的开源Golang书籍《Go Web 编程》一书，[Go安装](https://github.com/astaxie/build-web-application-with-golang/blob/master/ebook/01.1.md)一节。
 
-###2. 安装Sniper
+### 2. 安装Sniper
 
     $ go get github.com/lubia/sniper
     $ go install github.com/lubia/sniper
     $ cp src/github.com/lubia/sniper/.sniperc ~
 
-###3. 参数说明
+### 3. 参数说明
 
-####示例
+#### 示例
 GET
 
     $sniper -c 10 -n 100 http://www.google.com
@@ -131,9 +131,9 @@ POST
 
     $sniper -c 10 -n 100 -p postData.txt http://www.google.com
 
-####参数
+#### 参数
 
-#####命令行参数
+##### 命令行参数
 
 ```
 Usage:
@@ -160,7 +160,7 @@ Options:
 ```
 
 
-#####配置文件参数
+##### 配置文件参数
 
     说明：默认从$HOME/.sniperc读取配置文件，配置文件设置与命令行设置互为补充
     可通过命令行 -R 指定配置文件地址，-C 查看默认配置。
@@ -189,7 +189,7 @@ ssl-key = /root/key.pem                       ssl-key文件地址
 ssl-timeout = 30                              https超时
 ```
 
-#####结果输出
+##### 结果输出
 
 图表输出到当前目录下plot.html
 
@@ -208,17 +208,17 @@ ConnectionTime:                0.596 ms(mean)       链路建立耗时(平均，
 ProcessTime:                   0.900 ms(mean)       服务端执行时间+传输时间(TransactionTime = ConnectionTime + ProcessTime)
 StateCode:                    1000(code 200)        结果码为200的数量
 ```
-##关于
-####友好项目
+## 关于
+#### 友好项目
 
 - [gohttpbench](https://github.com/parkghost/gohttpbench)
 - [vegeta](https://github.com/tsenart/vegeta)
 
-####作者
+#### 作者
 
 博客：[Programer](http://www.btfak.com)
 
 联络：yanyuan2046 at 126.com
 
-####Licence
+#### Licence
 [Apache License, Version 2.0.](http://www.apache.org/licenses/LICENSE-2.0.html)
