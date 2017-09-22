@@ -14,6 +14,8 @@ Pre-compiled executables
 * [Linux 32 bit](http://lubia-me.qiniudn.com/sniper_linux_386)
 * [FreeBSD 64 bit](http://lubia-me.qiniudn.com/sniper_freebsd_amd64)
 * [FreeBSD 32 bit](http://lubia-me.qiniudn.com/sniper_freebsd_386)
+* [Windows 64 bit](http://77g42f.com1.z0.glb.clouddn.com/sniper_windows_amd64.exe)
+* [Windows 32 bit](http://77g42f.com1.z0.glb.clouddn.com/sniper_windows_386.exe)
 
 ## Features
 - GET / POST
