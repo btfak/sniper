@@ -53,11 +53,11 @@ func (m *Message) buildHeader() {
 	//post
 	if config.Basic.method == "POST" {
 		//content-length
-		line = "Content-Length :" + strconv.Itoa(len(config.Command.postData)) + "\r\n"
+		line = "Content-Length:" + strconv.Itoa(len(config.Command.postData)) + "\r\n"
 		msg = msg + line
 
 		//content-type
-		line = "Content-Type :" + config.Command.contentType + "\r\n"
+		line = "Content-Type:" + config.Command.contentType + "\r\n"
 		msg = msg + line
 	}
 

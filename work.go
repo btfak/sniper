@@ -124,6 +124,7 @@ func (c *Worker) fire() {
 			if c.data[9] == 50 && c.data[10] == 48 && c.data[11] == 48 {
 				c.trans.code = 200
 			}
+			isFirstLine = false
 		}
 		sum += n
 		if sum == maxRecvSize {
@@ -291,8 +292,8 @@ func taste() error {
 			}
 
 			//Content-Length
-			r := strings.Split(line, ":")
-			if r[0] == "Content-Length" {
+			r := strings.Split(strings.ToLower(line), ":")
+			if r[0] == "content-length" {
 				content_len, err = strconv.Atoi(eatCRLF(r[1]))
 				if err != nil {
 					return err
@@ -301,7 +302,7 @@ func taste() error {
 			}
 
 			//Transfer-Encoding
-			if r[0] == "Transfer-Encoding" {
+			if r[0] == "transfer-encoding" {
 				c := eatCRLF(r[1])
 				if c == "chunked" {
 					chunked = true
