@@ -2,8 +2,8 @@ package main
 
 const (
 	sniperVersionInfo = `This is Sniper ,version 1.0 
-Copyright (C) 2013 by Lubia Yang, et al.
-This is free software; open source on github.com/lubia/sniper.`
+Copyright (C) 2013 by btfak.com, et al.
+This is free software; open source on github.com/btfak/sniper.`
 	sniperUsageInfo = `Usage: 
    sniper [options] http[s]://hostname[:port][/path]
    sniper [options] -f urls.txt
@@ -24,8 +24,8 @@ Options:
    -s, --plot           plot detail transactions' info
                         (true | false,default set true,
                         notice: set -t will not plot anyhow).
-Copyright (C) 2013 by Lubia Yang, et al.
-This is free software; open source on github.com/lubia/sniper.
+Copyright (C) 2013 by btfak.com, et al.
+This is free software; open source on github.com/btfak/sniper.
 `
 	sniperNoDataInfo        = "file no data."
 	sniperOpenFileErrorInfo = "open file error."
