@@ -4,13 +4,14 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"github.com/msbranco/goconfig"
 	"io/ioutil"
 	"log"
 	"net/url"
 	"os"
 	"regexp"
 	"strings"
+
+	"github.com/msbranco/goconfig"
 )
 
 var config Config

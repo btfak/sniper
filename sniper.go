@@ -7,7 +7,7 @@ import (
 
 func main() {
 	initConfig()
-	prepBattle()
+	prepare()
 	if err := taste(); err != nil {
 		fmt.Println(err)
 		return
@@ -19,7 +19,7 @@ func main() {
 	<-over
 }
 
-func prepBattle() {
+func prepare() {
 	over = make(chan struct{})
 	//TODO:multicore but low performance
 	runtime.GOMAXPROCS(1) //runtime.NumCPU()
